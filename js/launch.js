@@ -1,7 +1,8 @@
-// Liberate launch gate: mint opens 2 November 2026 at 09.00 UTC.
+// Liberate launch gate: mint opened early on Yusup's order,
+// 2 November 2026 at 07.32 UTC (tx 0x16840ee1...). Gate kept for copy flips.
 // Before that instant the site counts down; after it, launch copy flips.
 // On-chain mintOpen() remains the source of truth for the mint itself.
-const LAUNCH_AT = Date.UTC(2026, 10, 2, 9, 0, 0);
+const LAUNCH_AT = Date.UTC(2026, 10, 2, 7, 32, 0);
 function launchIsOpen() { return Date.now() >= LAUNCH_AT; }
 function fmtCountdown(ms) {
   if (ms <= 0) return 'now';
