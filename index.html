@@ -69,6 +69,25 @@
     <div class="forms" id="formGrid"></div>
     <div class="pals" id="pals"></div>
     <p class="body small">Six laws are in the edition: Life, HighLife, Day &amp; Night, Coral, Maze and Mazectric. Twelve palettes. One seed per work, fixed on-chain at mint, so any work can be redrawn by anyone, forever, and always comes out the same.</p>
+
+    <div class="bench rv" id="bench">
+      <p class="mono bench-k">Bench · Pick a law, grow a room</p>
+      <div class="bench-laws" id="benchLaws"></div>
+      <canvas id="benchCanvas" width="880" height="880" role="img" aria-label="A bench room you can grow yourself, generation by generation"></canvas>
+      <div class="bench-read mono"><span id="benchGen">GEN 000 / 000</span><span id="benchOut">0 CELLS OUT</span><span class="sim-chip" id="benchStatus">READY</span></div>
+      <div class="bench-ctl">
+        <button class="chip" id="benchPlay" type="button">Play</button>
+        <button class="chip" id="benchStepB" type="button">−1 gen</button>
+        <button class="chip" id="benchStepF" type="button">+1 gen</button>
+        <label class="mono bench-speed">Speed <input type="range" id="benchSpeed" min="1" max="4" step="1" value="2"></label>
+      </div>
+      <div class="bench-seed">
+        <input id="benchSeed" inputmode="numeric" placeholder="Seed number" autocomplete="off" spellcheck="false">
+        <button class="chip" id="benchGrow" type="button">Grow it</button>
+        <button class="chip" id="benchRand" type="button">Random seed</button>
+      </div>
+      <p class="body small bench-note" id="benchNote">Seed mode: law, palette and cluster all come from the seed, exactly as a minted work grows. Tap any sample work above to replay its growth here.</p>
+    </div>
   </section>
 
   <section class="sec" id="fates">
@@ -77,6 +96,27 @@
     <div class="forms" style="grid-template-columns:1fr 1fr">
       <figure class="form"><div id="fateReleased"></div><figcaption><b>Released</b><span>Grew through the wall. Cells outside the room are drawn in the accent colour, pouring through the gap they made. Roughly nine works in ten end this way.</span></figcaption></figure>
       <figure class="form"><div id="fateHeld"></div><figcaption><b>Held</b><span>Stabilised, faded or pressed against the wall for 240 generations without breaking it. Scarce by construction: roughly one work in ten, decided by the seed alone.</span></figcaption></figure>
+    </div>
+    <div class="fate rv" id="fateBox">
+      <p class="mono bench-k">Fate machine · Test any number</p>
+      <p class="body small">Pick a number that means something to you: a birthday, a date, a door number. Run it as a seed and see whether its room opens or stays shut. Then run a hundred random rooms and watch the odds behave.</p>
+      <div class="bench-seed">
+        <input id="fateSeed" inputmode="numeric" placeholder="Your number" autocomplete="off" spellcheck="false">
+        <button class="chip" id="fateGo" type="button">Test it</button>
+        <button class="chip" id="fate100" type="button">Run 100 rooms</button>
+      </div>
+      <div class="fate-out" id="fateOut" hidden>
+        <div class="fate-art" id="fateArt"></div>
+        <div>
+          <p class="fate-stamp" id="fateStamp">RELEASED</p>
+          <p class="mono" id="fateTraits" style="margin-bottom:12px"></p>
+          <p class="body small" id="fateLine"></p>
+        </div>
+      </div>
+      <div class="fate-tally" id="fateTally" hidden>
+        <div class="fate-bar"><div id="fateBarR"></div></div>
+        <p class="mono" id="fateCounts" style="margin-top:10px">Released 0 · Held 0 · Rooms run 0 / 100</p>
+      </div>
     </div>
     <p class="body small">Status is a trait recorded in every work's metadata, alongside the breached side, the law, the palette and the seed. Nobody chooses it. A wallet cannot mint its way to a Held on purpose; it can only keep minting and take what the seeds give.</p>
   </section>
@@ -202,6 +242,7 @@ For each of my Liberate works that has not claimed yet: read claimAmount(tokenId
 <script src="/js/chain.js"></script>
 <script src="/js/site.js"></script>
 <script src="/js/sim.js"></script>
+<script src="/js/toy.js"></script>
 <script src="/js/veil.js"></script>
 <script src="/js/smooth.js" defer></script>
 <script src="/js/launch.js"></script>

@@ -16,6 +16,9 @@
       const r = window.LiberateArt.render(seed, 0);
       const d = document.createElement('figure');
       d.className = 'form';
+      d.setAttribute('data-seed', seed);
+      d.style.cursor = 'pointer';
+      d.title = 'Replay its growth on the bench';
       d.innerHTML = r.svg + '<figcaption><b>' + r.traits.Status + '</b><span>' + r.traits.Rule + ' · ' + r.traits.Palette + (r.traits.Breach !== 'None' ? ' · Breach ' + r.traits.Breach : '') + '</span></figcaption>';
       grid.appendChild(d);
     });

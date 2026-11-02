@@ -206,3 +206,32 @@ details p{animation:dIn .35s cubic-bezier(.2,.7,.2,1)}
 .veil-line{font-size:16.5px;line-height:1.6;color:var(--txt);max-width:440px;margin:0 auto 26px}
 .veil-x{color:#FFF;text-decoration:none;border:1px solid rgba(255,255,255,.4);padding:9px 14px;display:inline-block}
 .veil-x:hover{background:#FFF;color:#000}
+
+/* ---- bench + fate machine ---- */
+.bench{margin-top:34px;border:2px solid var(--ink);background:var(--paper);padding:16px}
+.bench-k{color:var(--mute);margin-bottom:14px}
+.bench-laws{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.bench-laws .chip.on{background:var(--ink);color:var(--bg)}
+#benchCanvas{display:block;width:100%;height:auto;background:#FFF;cursor:pointer;border:1px solid var(--rule)}
+.bench-read{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:11px}
+.bench-read .sim-chip{border-color:#000;color:#000}
+.bench-read .sim-chip.out{background:#000;color:#FFF}
+.bench-ctl{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+.bench-speed{display:inline-flex;align-items:center;gap:8px;color:var(--mute);margin-left:auto}
+.bench-speed input{accent-color:var(--ink);width:110px}
+.bench-seed{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.bench-seed input{flex:1;min-width:150px;height:44px;padding:0 12px;font-family:var(--mono);font-size:13px;background:transparent;border:1px solid var(--ink);color:var(--ink);outline:none}
+.bench-seed input:focus{border-width:2px}
+.bench-note{margin-top:14px}
+.fate{margin-top:34px;border:2px solid var(--ink);background:var(--paper);padding:16px}
+.fate .bench-seed{margin-top:16px}
+.fate-out{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
+.fate-art{border:2px solid var(--ink);line-height:0}
+.fate-art svg{width:100%;height:auto;display:block}
+.fate-stamp{display:inline-block;font-family:var(--sans);font-weight:800;text-transform:uppercase;font-size:30px;letter-spacing:.02em;border:3px solid var(--ink);padding:4px 14px;transform:rotate(-3deg);margin-bottom:14px;color:var(--ink)}
+.fate-tally{margin-top:20px}
+.fate-bar{height:14px;border:2px solid var(--ink)}
+.fate-bar div{height:100%;width:0;background:var(--ink);transition:width .25s}
+@media (min-width:760px){.fate-out{grid-template-columns:300px 1fr}}
+.fate-out[hidden]{display:none}
+.fate-tally[hidden]{display:none}

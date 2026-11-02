@@ -311,6 +311,93 @@
       sides: fin.sides, stats: { inside: fin.inside, band: fin.band, outside: fin.outside, steps: fin.steps }, pal, rule };
   }
 
-  root.LiberateArt = { render, simulate, PALETTES, RULES, SIZE, INSET };
-  if (typeof module !== 'undefined' && module.exports) module.exports = { render, simulate, PALETTES, RULES, SIZE, INSET };
+  // Playground variant for the site bench: the visitor picks the law,
+  // the seed still picks the cluster, density and radius. Same frame
+  // format as simulate(). A minted work lets its seed pick the law too;
+  // this exists so visitors can feel how much the law matters.
+  function toyPlay(seed, ruleIdx) {
+    const seedHex = '0x' + BigInt(seed).toString(16).padStart(64, '0');
+    const rule = RULES[Math.max(0, Math.min(RULES.length - 1, ruleIdx | 0))];
+    const base = rngFrom(seedHex, 0);
+    const wide = rule[1] === 'Day & Night';
+    const density = wide
+      ? pickW(base, [[0.45, 3], [0.52, 4], [0.6, 3]])
+      : pickW(base, [[0.35, 3], [0.45, 4], [0.55, 3]]);
+    const radius = wide
+      ? pickW(base, [[6, 4], [7, 3]])
+      : pickW(base, [[5, 3], [6, 4], [7, 3]]);
+
+    let chosen = -1, bestAtt = -1, bestTotal = -1, found = false;
+    for (let att = 0; att < ATTEMPTS; att++) {
+      const w = grow(seedHex, rule, density, radius, att);
+      if (!w) continue;
+      found = true;
+      const tot = w.inside + w.band + w.outside;
+      if (tot >= MINCELLS) { chosen = att; break; }
+      if (tot > bestTotal) { bestTotal = tot; bestAtt = att; }
+    }
+    if (chosen < 0) chosen = bestAtt;
+    if (chosen < 0 || !found) {
+      return { seed: seedHex, frames: [new Uint8Array(SIZE * SIZE)], status: 'Held', steps: 0,
+        sides: { North: 0, East: 0, South: 0, West: 0 }, stats: { inside: 0, band: 0, outside: 0, steps: 0 }, rule };
+    }
+
+    const rand = rngFrom(seedHex, chosen);
+    const B = new Set(rule[2]), S = new Set(rule[3]);
+    const C = SIZE / 2;
+    let g = new Uint8Array(SIZE * SIZE);
+    for (let y = C - radius; y < C + radius; y++)
+      for (let x = C - radius; x < C + radius; x++) {
+        const dx = x - C + 0.5, dy = y - C + 0.5;
+        if (dx * dx + dy * dy <= radius * radius && rand() < density) g[y * SIZE + x] = 1;
+      }
+    const frames = [];
+    let prev = null, fin = null;
+    for (let t = 0; t <= MAXSTEPS; t++) {
+      const snap = Uint8Array.from(g);
+      if (!frames.length || snap.some((v, i) => v !== frames[frames.length - 1][i])) frames.push(snap);
+      let inside = 0, band = 0, outside = 0;
+      const sides = { North: 0, East: 0, South: 0, West: 0 };
+      for (let y = 0; y < SIZE; y++) for (let x = 0; x < SIZE; x++) {
+        if (!g[y * SIZE + x]) continue;
+        const z = zone(x, y);
+        if (z === 2) inside++;
+        else if (z === 1) band++;
+        else {
+          outside++;
+          if (y < INSET) sides.North++;
+          if (y >= SIZE - INSET) sides.South++;
+          if (x < INSET) sides.West++;
+          if (x >= SIZE - INSET) sides.East++;
+        }
+      }
+      if (outside >= 3) { fin = { status: 'Released', inside, band, outside, sides, steps: t }; break; }
+      if (t === MAXSTEPS) { fin = { status: 'Held', inside, band, outside, sides, steps: t }; break; }
+      if (prev !== null) {
+        let same = true;
+        for (let i = 0; i < g.length; i++) if (g[i] !== prev[i]) { same = false; break; }
+        if (same) { fin = { status: 'Held', inside, band, outside, sides, steps: t }; break; }
+      }
+      prev = Uint8Array.from(g);
+      if (inside + band === 0) { fin = { status: 'Held', inside, band, outside, sides, steps: t }; break; }
+      const n = new Uint8Array(SIZE * SIZE);
+      for (let y = 0; y < SIZE; y++) for (let x = 0; x < SIZE; x++) {
+        let c = 0;
+        for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+          if (!dx && !dy) continue;
+          const xx = x + dx, yy = y + dy;
+          if (xx < 0 || yy < 0 || xx >= SIZE || yy >= SIZE) continue;
+          c += g[yy * SIZE + xx];
+        }
+        n[y * SIZE + x] = g[y * SIZE + x] ? (S.has(c) ? 1 : 0) : (B.has(c) ? 1 : 0);
+      }
+      g = n;
+    }
+    if (!fin) fin = { status: 'Held', inside: 0, band: 0, outside: 0, sides: { North: 0, East: 0, South: 0, West: 0 }, steps: 0 };
+    return { seed: seedHex, frames, status: fin.status, steps: fin.steps, sides: fin.sides,
+      stats: { inside: fin.inside, band: fin.band, outside: fin.outside, steps: fin.steps }, rule };
+  }
+
+  root.LiberateArt = { render, simulate, toyPlay, PALETTES, RULES, SIZE, INSET };
+  if (typeof module !== 'undefined' && module.exports) module.exports = { render, simulate, toyPlay, PALETTES, RULES, SIZE, INSET };
 })(typeof window !== 'undefined' ? window : globalThis);
