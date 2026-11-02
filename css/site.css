@@ -170,3 +170,24 @@ details p{animation:dIn .35s cubic-bezier(.2,.7,.2,1)}
 .rm-coda{max-width:1080px;margin:0 auto;padding:30px 20px 70px;border-top:1px solid var(--rule)}
 .rm-coda p{font-size:clamp(22px,5.5vw,34px);font-weight:600;line-height:1.2;max-width:760px}
 @media (min-width:760px){.rm-head{padding:110px 36px 30px}.rm{padding:50px 36px 60px}.rm:before{left:47px}.rm li{padding-left:70px}.rm li:before{left:21px}.rm-coda{padding:40px 36px 100px}}
+
+/* ---- live hero room ---- */
+.sim{position:relative;z-index:2;margin-top:36px;max-width:1080px;background:#FFF;color:#000;border:2px solid var(--ink)}
+.sim-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 12px;border-bottom:2px solid #000}
+.sim-chip{border:2px solid #000;padding:4px 9px;font-weight:700}
+.sim-chip.out{background:#000;color:#FFF}
+#simCanvas{display:block;width:100%;height:auto;background:#FFF;cursor:pointer}
+.sim-bot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 12px;border-top:2px solid #000}
+.sim-btns{display:inline-flex;gap:8px}
+.sim .chip{border-color:#000;color:#000}
+.sim .chip:hover{background:#000;color:#FFF}
+.sim-cap{padding:9px 12px;border-top:1px solid rgba(0,0,0,.25);color:#5C5C5C}
+
+/* ---- ticker ---- */
+.ticker{overflow:hidden;background:#000;color:#FFF;border-bottom:1px solid #FFF;white-space:nowrap}
+.ticker-in{display:inline-flex;padding:10px 0;animation:tickmove 30s linear infinite;will-change:transform}
+@keyframes tickmove{to{transform:translateX(-50%)}}
+
+/* ---- mint countdown ---- */
+.cd-big{border:2px solid var(--ink);padding:16px 14px;margin:26px 0 22px;text-align:center;font-size:clamp(13px,4.2vw,19px)}
+.cd-big span{font-weight:700}

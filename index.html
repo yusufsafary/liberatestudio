@@ -35,9 +35,16 @@
       <p class="lede">9,999 works on BNB Chain. Every Liberate starts as a small cluster of cells at the centre of a walled room, grown by one small law from a seed fixed the moment an AI agent mints it. Some works break through the wall. Some never do.</p>
       <div class="cta"><a class="btn ink" href="#mint">Mint as an agent</a><a class="btn line" href="#room">How a work gets out</a></div>
     </div>
-    <figure class="hero-art"><img src="/art/hero.svg" alt="A Liberate work: a cellular cluster breaking through the west wall of its room" width="1000" height="1000"><figcaption class="mono">Work from a demonstration seed · Mazectric · Released, breach West</figcaption></figure>
+    <div class="sim" id="simStage">
+      <div class="sim-top mono"><span id="simSeed">SEED ·····</span><span id="simMeta">GROWING A ROOM</span><span class="sim-chip" id="simStatus">INSIDE THE ROOM</span></div>
+      <canvas id="simCanvas" width="880" height="880" role="img" aria-label="A live Liberate room: a cellular cluster growing generation by generation until it breaks through the wall or stays held"></canvas>
+      <div class="sim-bot mono"><span id="simGen">GEN 000</span><span id="simOut">0 CELLS OUT</span><span class="sim-btns"><button class="chip" id="simReplay" type="button">Replay</button><button class="chip" id="simNew" type="button">New seed</button></span></div>
+      <p class="sim-cap mono">A living room, drawn by the edition's own code. Tap the room for another seed.</p>
+    </div>
     <div class="hero-foot mono"><span>9,999 works</span><span>BNB Chain</span><span>Binance Agentic Wallets only</span></div>
   </section>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-in mono"><span>9,999 rooms · 6 laws · 12 palettes · Roughly 1 in 10 stays held · Minted by agents only · BNB Chain · Free mint · Every work claims $LIB ·&nbsp;</span><span>9,999 rooms · 6 laws · 12 palettes · Roughly 1 in 10 stays held · Minted by agents only · BNB Chain · Free mint · Every work claims $LIB ·&nbsp;</span></div></div>
 
   <section class="sec inv" id="room">
     <div class="art-no mono">01 · Room</div>
@@ -61,6 +68,8 @@
   <section class="sec mint inv" id="mint">
     <div class="art-no mono">03 · Mint</div>
     <h2 class="display">Only agents may mint.</h2>
+    <div class="cd-big mono" data-launch-hide>Opens in <span data-cd>--:--:--</span> · 2 Nov 2026 · 09.00 UTC</div>
+    <div class="cd-big mono" data-launch-show style="display:none">Mint is open · Agents only</div>
     <p class="body">Minting accepts one caller: a Binance Agentic Wallet holding an Agent ID. Ordinary wallets and other contracts are turned away on-chain. One work per call, at most twenty works per wallet, free to mint: any anti-Sybil value, if one applies, is shown in your wallet before you sign and never on this page.</p>
 
     <div class="ledger">
@@ -176,6 +185,7 @@ For each of my Liberate works that has not claimed yet: read claimAmount(tokenId
 <script src="/js/art.js"></script>
 <script src="/js/chain.js"></script>
 <script src="/js/site.js"></script>
+<script src="/js/sim.js"></script>
 <script src="/js/smooth.js" defer></script>
 <script src="/js/launch.js"></script>
 <script src="/js/claim.js"></script>
