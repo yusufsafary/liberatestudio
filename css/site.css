@@ -249,4 +249,5 @@ details p{animation:dIn .35s cubic-bezier(.2,.7,.2,1)}
 @media (max-width:420px){
   .l-row .v{font-size:16px}
   .mono{overflow-wrap:anywhere}
+  .nav a{padding:0 7px;font-size:10px;letter-spacing:.08em}
 }
