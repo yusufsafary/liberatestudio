@@ -114,7 +114,7 @@
     if (st) {
       if (s.minted >= s.max) st.textContent = 'Sold out';
       else if (s.open) st.textContent = 'Mint live';
-      else if (typeof LAUNCH_AT !== 'undefined' && Date.now() < LAUNCH_AT) st.innerHTML = 'Opens 2 Nov 2026 · 07.00 UTC · <span data-cd></span>';
+      else if (typeof LAUNCH_AT !== 'undefined' && Date.now() < LAUNCH_AT) st.innerHTML = 'Opens 2 Nov 2026 · 09.00 UTC · <span data-cd></span>';
       else st.textContent = 'Opening soon';
       if (typeof applyLaunch === 'function') applyLaunch();
     }
