@@ -39,6 +39,21 @@
 </style>
 </head>
 <body>
+<div class="veil" id="veil" data-launch-hide>
+  <div class="veil-in">
+    <p class="mono veil-top">BNB Chain · Agents only · Free mint</p>
+    <h1 class="display veil-word">LIBERATE</h1>
+    <div class="veil-room">
+      <canvas id="veilCanvas" width="440" height="440" aria-hidden="true"></canvas>
+      <p class="mono veil-status"><span id="veilSeed">SEED ·····</span><span id="veilStatus">INSIDE THE ROOM</span></p>
+    </div>
+    <p class="veil-cd mono">Opens in <span data-cd>--:--:--</span></p>
+    <p class="mono veil-sub">2 Nov 2026 · 09.00 UTC · 9,999 rooms</p>
+    <p class="veil-line">Every work begins in a room. Most get out. Full site opens with the mint.</p>
+    <a class="mono veil-x" href="https://x.com/liberatedev" target="_blank" rel="noopener">@liberatedev</a>
+  </div>
+</div>
+<script>if(Date.now()>=Date.UTC(2026,10,2,9,0,0)||/[?&]preview=1/.test(location.search))document.getElementById('veil').style.display='none';</script>
 <header class="bar">
   <a class="mark" href="/"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><g fill="currentColor"><rect x="4" y="4" width="10" height="3"/><rect x="4" y="4" width="3" height="16"/><rect x="4" y="17" width="16" height="3"/><rect x="17" y="11" width="3" height="9"/></g><rect x="16" y="3" width="4" height="4" fill="#FFFFFF"/></svg>LIBERATE</a>
   <nav class="nav mono"><a href="/#room">Room</a><a href="/#mint">Mint</a><a href="/#claim">Claim</a><a href="/market" aria-current="page">Market</a></nav>
@@ -71,6 +86,8 @@
 
 <script src="/js/art.js"></script>
 <script src="/js/chain.js"></script>
+<script src="/js/launch.js"></script>
+<script src="/js/veil.js"></script>
 <script>
 const $ = (s) => document.querySelector(s);
 let ALL = [];

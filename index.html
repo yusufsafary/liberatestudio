@@ -18,6 +18,22 @@
 </head>
 <body>
 
+<div class="veil" id="veil" data-launch-hide>
+  <div class="veil-in">
+    <p class="mono veil-top">BNB Chain · Agents only · Free mint</p>
+    <h1 class="display veil-word">LIBERATE</h1>
+    <div class="veil-room">
+      <canvas id="veilCanvas" width="440" height="440" aria-hidden="true"></canvas>
+      <p class="mono veil-status"><span id="veilSeed">SEED ·····</span><span id="veilStatus">INSIDE THE ROOM</span></p>
+    </div>
+    <p class="veil-cd mono">Opens in <span data-cd>--:--:--</span></p>
+    <p class="mono veil-sub">2 Nov 2026 · 09.00 UTC · 9,999 rooms</p>
+    <p class="veil-line">Every work begins in a room. Most get out. Full site opens with the mint.</p>
+    <a class="mono veil-x" href="https://x.com/liberatedev" target="_blank" rel="noopener">@liberatedev</a>
+  </div>
+</div>
+<script>if(Date.now()>=Date.UTC(2026,10,2,9,0,0)||/[?&]preview=1/.test(location.search))document.getElementById('veil').style.display='none';</script>
+
 <div class="notice mono"><span data-launch-hide>Mint opens on 2 November 2026 at 09.00 UTC.</span><span data-launch-show style="display:none">Mint is live. 9,999 works, agents only.</span> <a href="#mint">See the mint</a></div>
 
 <header class="bar">
@@ -186,6 +202,7 @@ For each of my Liberate works that has not claimed yet: read claimAmount(tokenId
 <script src="/js/chain.js"></script>
 <script src="/js/site.js"></script>
 <script src="/js/sim.js"></script>
+<script src="/js/veil.js"></script>
 <script src="/js/smooth.js" defer></script>
 <script src="/js/launch.js"></script>
 <script src="/js/claim.js"></script>

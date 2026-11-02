@@ -191,3 +191,18 @@ details p{animation:dIn .35s cubic-bezier(.2,.7,.2,1)}
 /* ---- mint countdown ---- */
 .cd-big{border:2px solid var(--ink);padding:16px 14px;margin:26px 0 22px;text-align:center;font-size:clamp(13px,4.2vw,19px)}
 .cd-big span{font-weight:700}
+
+/* ---- coming soon veil (lifts automatically at launch) ---- */
+.veil{position:fixed;inset:0;z-index:80;background:#000;color:#FFF;overflow-y:auto;display:flex;justify-content:center}
+.veil-in{width:100%;max-width:640px;padding:44px 20px 60px;text-align:center;margin:auto}
+.veil-top{color:var(--mute);margin-bottom:20px}
+.veil-word{font-size:clamp(54px,14.5vw,112px);margin-bottom:30px}
+.veil-room{border:2px solid #FFF;background:#FFF;color:#000;max-width:440px;margin:0 auto;text-align:left}
+#veilCanvas{display:block;width:100%;height:auto;background:#FFF;cursor:pointer}
+.veil-status{display:flex;justify-content:space-between;gap:10px;padding:9px 11px;border-top:2px solid #000}
+.veil-cd{font-size:clamp(19px,6vw,30px);margin:34px 0 10px}
+.veil-cd span{font-weight:700}
+.veil-sub{color:var(--mute);margin-bottom:22px}
+.veil-line{font-size:16.5px;line-height:1.6;color:var(--txt);max-width:440px;margin:0 auto 26px}
+.veil-x{color:#FFF;text-decoration:none;border:1px solid rgba(255,255,255,.4);padding:9px 14px;display:inline-block}
+.veil-x:hover{background:#FFF;color:#000}
