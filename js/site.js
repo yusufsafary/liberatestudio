@@ -57,10 +57,10 @@
         if (!g[y * SIZE + x]) continue;
         const z = zone(x, y);
         if (z === 0) outside++;
-        ctx.fillStyle = z === 2 ? 'rgba(237,238,242,.45)' : '#3ED97A';
+        ctx.fillStyle = z === 2 ? 'rgba(255,255,255,.5)' : '#FFFFFF';
         ctx.fillRect(ox + x * cell + 0.5, oy + y * cell + 0.5, cell - 1, cell - 1);
       }
-      ctx.strokeStyle = 'rgba(237,238,242,.5)';
+      ctx.strokeStyle = 'rgba(255,255,255,.55)';
       ctx.lineWidth = 2 * cell;
       const c = (INSET + 1) * cell;
       ctx.strokeRect(ox + c, oy + c, (SIZE - 2 * (INSET + 1)) * cell, (SIZE - 2 * (INSET + 1)) * cell);
@@ -91,7 +91,7 @@
     const pals = $('#pals');
     if (pals) {
       pals.innerHTML = window.LiberateArt.PALETTES.map(function (p) {
-        return '<span class="pal"><span class="sw"><i style="background:' + p.bg + '"></i><i style="background:' + p.ink + '"></i><i style="background:' + p.acc + '"></i></span>' + p.name + '</span>';
+        return '<span class="pal">' + p.name + '</span>';
       }).join('');
     }
   })();
