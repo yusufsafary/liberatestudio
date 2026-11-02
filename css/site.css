@@ -235,3 +235,18 @@ details p{animation:dIn .35s cubic-bezier(.2,.7,.2,1)}
 @media (min-width:760px){.fate-out{grid-template-columns:300px 1fr}}
 .fate-out[hidden]{display:none}
 .fate-tally[hidden]{display:none}
+
+/* ---- mobile hardening (phones first) ---- */
+@media (max-width:760px){
+  .code pre{white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:visible}
+  .bench{padding:12px}
+  .fate{padding:12px}
+  .fate-stamp{font-size:24px}
+  .bench-speed{margin-left:0;width:100%}
+  .bench-speed input{flex:1;width:auto}
+  .chip{padding:10px 12px}
+}
+@media (max-width:420px){
+  .l-row .v{font-size:16px}
+  .mono{overflow-wrap:anywhere}
+}
