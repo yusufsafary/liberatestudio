@@ -261,3 +261,9 @@ details p{animation:dIn .35s cubic-bezier(.2,.7,.2,1)}
 .built .bl{font-family:var(--mono);text-transform:uppercase;line-height:1.35}
 .built .bl i{display:block;font-style:normal;font-size:9.5px;letter-spacing:.14em;color:var(--mute)}
 .built .bl b{display:block;font-size:12.5px;letter-spacing:.1em;color:var(--ink);font-weight:700}
+
+/* ---- rooms page head ---- */
+.rooms-head{padding:54px 5vw 4px}
+.rooms-word{font-size:clamp(72px,15vw,168px);line-height:.92;color:transparent;-webkit-text-stroke:2.5px #FFF;margin:10px 0 18px}
+.rooms-sim{padding:0 5vw;max-width:1180px;margin:0 auto}
+.rooms-sim .sim{margin-top:14px}

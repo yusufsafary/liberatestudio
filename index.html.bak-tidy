@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Liberate: Every work begins in a room</title>
+<meta name="description" content="9,999 generative works on BNB Chain. Each one starts as a cluster inside a walled room and grows by a small law: most break out, a few stay held. Minted only by Binance Agentic Wallets with an Agent ID.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Liberate: Every work begins in a room">
+<meta property="og:description" content="9,999 generative works that break out of a walled room, minted only by AI agents.">
+<meta property="og:image" content="https://liberatestudio.dev/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@liberatedev">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<div class="veil" id="veil" data-launch-hide>
+  <div class="veil-in">
+    <p class="mono veil-top">BNB Chain · Agents only · Free mint</p>
+    <h1 class="display veil-word">LIBERATE</h1>
+    <div class="veil-room">
+      <canvas id="veilCanvas" width="440" height="440" aria-hidden="true"></canvas>
+      <p class="mono veil-status"><span id="veilSeed">SEED ·····</span><span id="veilStatus">INSIDE THE ROOM</span></p>
+    </div>
+    <p class="veil-cd mono">Opens in <span data-cd>--:--:--</span></p>
+    <p class="mono veil-sub">2 Nov 2026 · 09.00 UTC · 9,999 rooms</p>
+    <p class="veil-line">Every work begins in a room. Most get out. Full site opens with the mint.</p>
+    <p class="mono" style="color:#FFF;border:1px solid rgba(255,255,255,.4);display:inline-block;padding:9px 14px;margin:0 auto 26px">All mint fees buy back $LIB after launch.</p>
+    <a class="mono veil-x" href="https://x.com/liberatedev" target="_blank" rel="noopener">@liberatedev</a>
+  </div>
+</div>
+<script>if(Date.now()>=Date.UTC(2026,10,2,7,32,0)||/[?&]preview=1/.test(location.search))document.getElementById('veil').remove();</script>
+
+<div class="notice mono">All mint fees buy back $LIB after launch. <a href="#mint">See the mint</a></div>
+
+<header class="bar">
+  <a class="mark" href="#top"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><g fill="currentColor"><rect x="4" y="4" width="10" height="3"/><rect x="4" y="4" width="3" height="16"/><rect x="4" y="17" width="16" height="3"/><rect x="17" y="11" width="3" height="9"/></g><rect x="16" y="3" width="4" height="4" fill="#FFFFFF"/></svg>LIBERATE</a>
+  <nav class="nav mono"><a href="#room">Room</a><a href="#fates">Fates</a><a href="#mint">Mint</a><a href="#claim">Claim</a><a href="#works">Works</a><a href="/market">Market</a></nav>
+  <a class="mono mk-pill" href="/market">Market</a>
+  <div class="count mono"><i></i><b id="barCount">0</b>/9,999</div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-in">
+      <p class="kicker mono">A cellular edition of 9,999 rooms · BNB Chain · Minted by agents</p>
+      <h1 class="display">Every work begins in a room.<br><em>Most get out.</em></h1>
+      <p class="lede">9,999 works on BNB Chain. Every Liberate starts as a small cluster of cells at the centre of a walled room, grown by one small law from a seed fixed the moment an AI agent mints it. Some works break through the wall. Some never do.</p>
+      <div class="cta"><a class="btn ink" href="#mint">Mint as an agent</a><a class="btn line" href="#room">How a work gets out</a></div>
+      <div class="builtrow">
+        <span class="built"><span class="lg"><img src="/img/bnb.svg" alt="BNB Chain logo"></span><span class="bl"><i>Built on</i><b>BNB Chain</b></span></span>
+        <span class="built"><span class="lg"><img src="/img/element.png" alt="Element Market logo" class="el"></span><span class="bl"><i>Market on</i><b>Element</b></span></span>
+      </div>
+    </div>
+    <div class="sim" id="simStage">
+      <div class="sim-top mono"><span id="simSeed">SEED ·····</span><span id="simMeta">GROWING A ROOM</span><span class="sim-chip" id="simStatus">INSIDE THE ROOM</span></div>
+      <canvas id="simCanvas" width="880" height="880" role="img" aria-label="A live Liberate room: a cellular cluster growing generation by generation until it breaks through the wall or stays held"></canvas>
+      <div class="sim-bot mono"><span id="simGen">GEN 000</span><span id="simOut">0 CELLS OUT</span><span class="sim-btns"><button class="chip" id="simReplay" type="button">Replay</button><button class="chip" id="simNew" type="button">New seed</button></span></div>
+      <p class="sim-cap mono">A living room, drawn by the edition's own code. Tap the room for another seed.</p>
+    </div>
+    <div class="hero-foot mono"><span>9,999 works</span><span>BNB Chain</span><span>Binance Agentic Wallets only</span></div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-in mono"><span>9,999 rooms · 6 laws · 12 palettes · Roughly 1 in 10 stays held · Minted by agents only · BNB Chain · Free mint · Every work claims $LIB ·&nbsp;</span><span>9,999 rooms · 6 laws · 12 palettes · Roughly 1 in 10 stays held · Minted by agents only · BNB Chain · Free mint · Every work claims $LIB ·&nbsp;</span></div></div>
+
+  <section class="sec inv" id="room">
+    <div class="art-no mono">01 · Room</div>
+    <h2 class="display">A room, a wall, a seed.</h2>
+    <p class="body">A work is drawn at the moment of its escape. A cellular law grows the cluster generation by generation; the drawing freezes at the first generation that puts three cells beyond the wall, with the gap torn exactly where the pattern came through. Works are shown below from demonstration seeds, drawn by the same code that draws the edition.</p>
+    <div class="forms" id="formGrid"></div>
+    <div class="pals" id="pals"></div>
+    <p class="body small">Six laws are in the edition: Life, HighLife, Day &amp; Night, Coral, Maze and Mazectric. Twelve palettes. One seed per work, fixed on-chain at mint, so any work can be redrawn by anyone, forever, and always comes out the same.</p>
+
+    <div class="bench rv" id="bench">
+      <p class="mono bench-k">Bench · Pick a law, grow a room</p>
+      <div class="bench-laws" id="benchLaws"></div>
+      <canvas id="benchCanvas" width="880" height="880" role="img" aria-label="A bench room you can grow yourself, generation by generation"></canvas>
+      <div class="bench-read mono"><span id="benchGen">GEN 000 / 000</span><span id="benchOut">0 CELLS OUT</span><span class="sim-chip" id="benchStatus">READY</span></div>
+      <div class="bench-ctl">
+        <button class="chip" id="benchPlay" type="button">Play</button>
+        <button class="chip" id="benchStepB" type="button">−1 gen</button>
+        <button class="chip" id="benchStepF" type="button">+1 gen</button>
+        <label class="mono bench-speed">Speed <input type="range" id="benchSpeed" min="1" max="4" step="1" value="2"></label>
+      </div>
+      <div class="bench-seed">
+        <input id="benchSeed" inputmode="numeric" placeholder="Seed number" autocomplete="off" spellcheck="false">
+        <button class="chip" id="benchGrow" type="button">Grow it</button>
+        <button class="chip" id="benchRand" type="button">Random seed</button>
+      </div>
+      <p class="body small bench-note" id="benchNote">Seed mode: law, palette and cluster all come from the seed, exactly as a minted work grows. Tap any sample work above to replay its growth here.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="fates">
+    <div class="art-no mono">02 · Fates</div>
+    <h2 class="display">Two fates.</h2>
+    <div class="forms" style="grid-template-columns:1fr 1fr">
+      <figure class="form"><div id="fateReleased"></div><figcaption><b>Released</b><span>Grew through the wall. Cells outside the room are drawn in the accent colour, pouring through the gap they made. Roughly nine works in ten end this way.</span></figcaption></figure>
+      <figure class="form"><div id="fateHeld"></div><figcaption><b>Held</b><span>Stabilised, faded or pressed against the wall for 240 generations without breaking it. Scarce by construction: roughly one work in ten, decided by the seed alone.</span></figcaption></figure>
+    </div>
+    <div class="fate rv" id="fateBox">
+      <p class="mono bench-k">Fate machine · Test any number</p>
+      <p class="body small">Pick a number that means something to you: a birthday, a date, a door number. Run it as a seed and see whether its room opens or stays shut. Then run a hundred random rooms and watch the odds behave.</p>
+      <div class="bench-seed">
+        <input id="fateSeed" inputmode="numeric" placeholder="Your number" autocomplete="off" spellcheck="false">
+        <button class="chip" id="fateGo" type="button">Test it</button>
+        <button class="chip" id="fate100" type="button">Run 100 rooms</button>
+      </div>
+      <div class="fate-out" id="fateOut" hidden>
+        <div class="fate-art" id="fateArt"></div>
+        <div>
+          <p class="fate-stamp" id="fateStamp">RELEASED</p>
+          <p class="mono" id="fateTraits" style="margin-bottom:12px"></p>
+          <p class="body small" id="fateLine"></p>
+        </div>
+      </div>
+      <div class="fate-tally" id="fateTally" hidden>
+        <div class="fate-bar"><div id="fateBarR"></div></div>
+        <p class="mono" id="fateCounts" style="margin-top:10px">Released 0 · Held 0 · Rooms run 0 / 100</p>
+      </div>
+    </div>
+    <p class="body small">Status is a trait recorded in every work's metadata, alongside the breached side, the law, the palette and the seed. Nobody chooses it. A wallet cannot mint its way to a Held on purpose; it can only keep minting and take what the seeds give.</p>
+  </section>
+
+  <section class="sec mint inv" id="mint">
+    <div class="art-no mono">03 · Mint</div>
+    <h2 class="display">Only agents may mint.</h2>
+    <div class="cd-big mono" data-launch-hide>Opens in <span data-cd>--:--:--</span> · 2 Nov 2026 · 09.00 UTC</div>
+    <div class="cd-big mono" data-launch-show style="display:none">Mint is open · Agents only</div>
+    <p class="body">Minting accepts one caller: a Binance Agentic Wallet holding an Agent ID. Ordinary wallets and other contracts are turned away on-chain. One work per call, at most twenty works per wallet, free to mint: any anti-Sybil value, if one applies, is shown in your wallet before you sign and never on this page.</p>
+
+    <div class="ledger">
+      <div class="l-row"><span class="mono k">Minted</span><span class="v"><b id="mMinted">0</b> / 9,999</span></div>
+      <div class="meter"><div id="mFill"></div></div>
+      <div class="l-row"><span class="mono k">Remaining</span><span class="v" id="mLeft">9,999</span></div>
+      <div class="l-row"><span class="mono k">Per wallet</span><span class="v">Max 20</span></div>
+      <div class="l-row"><span class="mono k">Price</span><span class="v">Free</span></div>
+      <div class="l-row"><span class="mono k">Status</span><span class="v mono" id="mStatus">Reading contract…</span></div>
+    </div>
+
+    <ol class="steps">
+      <li><span class="mono">01</span><div><b>Hold an Agent ID.</b> Claim it in the Binance Wallet app under your Agentic Wallet. The contract checks it before anything else.</div></li>
+      <li><span class="mono">02</span><div><b>Call mint().</b> One call, no arguments. Read <code>currentPrice()</code> and send exactly that. Your wallet shows the value before you sign.</div></li>
+      <li><span class="mono">03</span><div><b>Your fate is decided.</b> The block decides the seed, the seed decides the law, the palette and whether your work gets out. Nothing is curated after the fact.</div></li>
+    </ol>
+
+    <div class="code">
+      <div class="code-top mono"><span>Prompt for your agent</span><button class="chip" data-copy="prompt">Copy</button></div>
+      <pre id="prompt">Mint one Liberate on BNB Chain (chain id 56).
+Contract: <span class="caddr">0x183C388967054B60542573e540B49E7d7E921101</span>
+Call mint() with calldata 0x1249c58b.
+Value: read currentPrice() on the contract and send exactly that.
+Full instructions: https://liberatestudio.dev/liberate-skill.md</pre>
+    </div>
+    <div class="code dark">
+      <div class="code-top mono"><span>baw CLI</span><button class="chip" data-copy="cli">Copy</button></div>
+      <pre id="cli">baw contract-call preview --binanceChainId 56 \
+  --from &lt;your agentic wallet&gt; \
+  --to <span class="caddr">0x183C388967054B60542573e540B49E7d7E921101</span> \
+  --value &lt;currentPrice() in wei&gt; --inputData 0x1249c58b --json
+
+baw contract-call execute --requestId &lt;requestId&gt; --json</pre>
+    </div>
+    <div class="check">
+      <label class="mono" for="who">Check a wallet</label>
+      <div class="check-row"><input id="who" placeholder="0x…" autocomplete="off" spellcheck="false"><button class="btn ink sm" id="whoBtn">Check</button></div>
+      <p class="mono small" id="whoOut"></p>
+    </div>
+  </section>
+
+  <section class="sec" id="claim">
+    <div class="art-no mono">04 · Claim</div>
+    <h2 class="display">Every work claims $LIB.</h2>
+    <p class="body">Every minted Liberate carries a claim of $LIB, paid once per work. How much depends on where the work stood in its first wallet: the earlier a work was minted by that wallet, the smaller its claim; the works a wallet minted last carry the largest claims in the edition. Sell a work before claiming and the claim travels with it, at the value fixed by its first wallet.</p>
+    <p class="body">Claims run through your Binance agent, exactly like the mint, and carry no claim fee. Claims open once the claim pool is funded on-chain; the ledger below reads the contract directly.</p>
+
+    <div class="ledger">
+      <div class="l-row"><span class="mono k">Mint order 1 to 4</span><span class="v">99,999 $LIB per work</span></div>
+      <div class="l-row"><span class="mono k">Mint order 5 to 8</span><span class="v">499,999 $LIB per work</span></div>
+      <div class="l-row"><span class="mono k">Mint order 9 to 12</span><span class="v">999,999 $LIB per work</span></div>
+      <div class="l-row"><span class="mono k">Mint order 13 to 16</span><span class="v">4,999,999 $LIB per work</span></div>
+      <div class="l-row"><span class="mono k">Mint order 17 to 20</span><span class="v">9,999,999 $LIB per work</span></div>
+      <div class="l-row"><span class="mono k">Claimed</span><span class="v"><b id="cClaimed">0</b> / 9,999</span></div>
+      <div class="meter"><div id="cFill"></div></div>
+      <div class="l-row"><span class="mono k">Status</span><span class="v mono" id="cStatus">Reading contract…</span></div>
+    </div>
+
+    <ol class="steps">
+      <li><span class="mono">01</span><div><b>Hold a Liberate</b> that has not claimed yet. Unsure about a work? Check its number below: the checker reads the exact amount from the claim contract.</div></li>
+      <li><span class="mono">02</span><div><b>Tell your agent to claim.</b> Copy the prompt below, or point it to the claim skill file: <a href="/liberate-claim-skill.md">liberate-claim-skill.md</a>. It checks the amount on-chain and shows you a preview first.</div></li>
+      <li><span class="mono">03</span><div><b>Confirm in your wallet.</b> $LIB arrives in the same transaction.</div></li>
+    </ol>
+
+    <div class="code">
+      <div class="code-top mono"><span>Prompt for your agent</span><button class="chip" data-copy="cprompt">Copy</button></div>
+      <pre id="cprompt">Claim the $LIB for my Liberate works on BNB Chain (chain id 56).
+Read the skill file at https://liberatestudio.dev/liberate-claim-skill.md and follow it exactly.
+For each of my Liberate works that has not claimed yet: read claimAmount(tokenId) on the claim contract, preview the transaction, then call claim(tokenId). Each work claims once, at the amount its mint order fixed.</pre>
+    </div>
+    <div class="check">
+      <label class="mono" for="work">Check a work</label>
+      <div class="check-row"><input id="work" placeholder="Work number, 1 to 9,999" autocomplete="off" spellcheck="false" inputmode="numeric"><button class="btn ink sm" id="workBtn">Check</button></div>
+      <p class="mono small" id="workOut"></p>
+    </div>
+    <p class="mono small" style="margin-top:18px">Token <a href="https://bscscan.com/address/0x7a9F7855C038cC167f53f755B3682e0266a5dC49" target="_blank" rel="noopener">0x7a9F…dC49 ↗</a> · Claim contract <a href="https://bscscan.com/address/0x47541aBaA4267c51Bd9197F45216530be3832149" target="_blank" rel="noopener">0x4754…2149 ↗</a></p>
+  </section>
+
+  <section class="sec inv" id="works">
+    <div class="art-no mono">05 · Works</div>
+    <h2 class="display">Works minted so far.</h2>
+    <div class="gallery" id="gallery"><p class="empty mono">The first room is waiting for its agent.</p></div>
+  </section>
+
+  <section class="sec" id="market">
+    <div class="art-no mono">06 · Exchange</div>
+    <h2 class="display">Market.</h2>
+    <p style="max-width:620px;color:var(--mute);margin-bottom:26px">Every minted work and its owner, in one place. Trading runs through Element on BNB Chain once the collection is indexed there; the market page reads owners and fates straight from the contract in the meantime.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn ink" href="/market">See the market</a><a class="btn line" data-launch-show style="display:none" href="https://element.market/collections/liberate" target="_blank" rel="noopener">Trade on Element</a><span class="btn line" data-launch-hide style="opacity:.55;cursor:default">Trade on Element · Opens 09.00 UTC</span></div>
+  </section>
+
+  <section class="sec" id="programme">
+    <div class="art-no mono">07 · Programme</div>
+    <h2 class="display">Programme.</h2>
+    <p class="body">Four movements. <b>I · Launch:</b> the edition opens to agents and the rooms start filling. <b>II · Claim:</b> the $LIB pool opens and every work collects what its mint order earned. <b>III · Market:</b> works change hands on Element, claims travelling with unclaimed pieces. <b>IV · Study:</b> the edition is read as a catalogue: which laws escape, which palettes hold, which seeds never stood a chance.</p>
+  </section>
+
+  <section class="sec" id="notes">
+    <div class="art-no mono">Notes</div>
+    <details><summary>Why only agents?</summary><p>Liberate is about rules that run without a hand on them, so it is minted by software that acts on its own. The contract requires the SPACE ID Agent ID that Binance Agentic Wallets claim, and rejects calls from contracts.</p></details>
+    <details><summary>What decides if my work gets out?</summary><p>A seed made from the block and your address at mint. It picks the law, the palette, the starting cluster and the growth. Run the growth and the answer is whatever happens: through the wall, or held. The same seed always draws the same work.</p></details>
+    <details><summary>Why is a later mint worth more $LIB?</summary><p>Claims reward depth in one wallet. A wallet that mints once holds a small claim; a wallet that mints twenty holds claims worth 66,399,980 $LIB in total. The amount is fixed at mint by the work's order in that wallet and never changes, whoever owns the work later.</p></details>
+    <details><summary>Where does it live?</summary><p>Seeds live on BNB Chain. Drawing code is open and runs in this page, so anyone can redraw any Liberate from its seed. Metadata and artwork files are served from this site.</p></details>
+  </section>
+</main>
+
+<footer class="foot mono">
+  <span>LIBERATE · 9,999 WORKS</span>
+  <a href="https://x.com/liberatedev" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>@liberatedev</a>
+  <a id="cLink" href="https://bscscan.com/address/0x183C388967054B60542573e540B49E7d7E921101" target="_blank" rel="noopener">Contract 0x183C…1101 ↗</a>
+</footer>
+
+<script src="/js/art.js"></script>
+<script src="/js/chain.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/sim.js"></script>
+<script src="/js/toy.js"></script>
+<script src="/js/veil.js"></script>
+<script src="/js/smooth.js" defer></script>
+<script src="/js/launch.js"></script>
+<script src="/js/claim.js"></script>
+</body>
+</html>
