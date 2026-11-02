@@ -57,10 +57,10 @@
         if (!g[y * SIZE + x]) continue;
         const z = zone(x, y);
         if (z === 0) outside++;
-        ctx.fillStyle = z === 2 ? 'rgba(27,26,23,.5)' : '#D8432A';
+        ctx.fillStyle = z === 2 ? 'rgba(237,238,242,.45)' : '#3ED97A';
         ctx.fillRect(ox + x * cell + 0.5, oy + y * cell + 0.5, cell - 1, cell - 1);
       }
-      ctx.strokeStyle = 'rgba(27,26,23,.55)';
+      ctx.strokeStyle = 'rgba(237,238,242,.5)';
       ctx.lineWidth = 2 * cell;
       const c = (INSET + 1) * cell;
       ctx.strokeRect(ox + c, oy + c, (SIZE - 2 * (INSET + 1)) * cell, (SIZE - 2 * (INSET + 1)) * cell);
@@ -75,7 +75,7 @@
     }, 130);
   })();
 
-  // ---------- sample works (Article I) ----------
+  // ---------- sample works (01 Room) ----------
   const SAMPLES = ['7932', '277178', '316773', '285097'];
   (function samples() {
     const grid = $('#formGrid');
@@ -96,7 +96,7 @@
     }
   })();
 
-  // ---------- two fates (Article II) ----------
+  // ---------- two fates (02 Fates) ----------
   (function fates() {
     if (!window.LiberateArt) return;
     const rel = $('#fateReleased'), held = $('#fateHeld');
